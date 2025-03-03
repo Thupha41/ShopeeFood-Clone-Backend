@@ -255,7 +255,7 @@ export const registerValidator = validate(
         }
       },
       password: passwordSchema,
-      confirm_password: confirmPasswordSchema,
+      confirm_password: confirmPasswordSchema
     },
     ['body']
   )
