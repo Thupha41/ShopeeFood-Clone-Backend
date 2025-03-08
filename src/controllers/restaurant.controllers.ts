@@ -26,7 +26,7 @@ export const updateRestaurant = async (
 ) => {
   const user = req.decoded_authorization as TokenPayload
   const user_id = user.user_id
-  const result = await restaurantService.updateRestaurant(user_id.toString(), req.params.delivery_id, req.body)
+  const result = await restaurantService.updateRestaurant(user_id.toString(), req.params.restaurant_id, req.body)
   res.json({
     message: RESTAURANT_MESSAGES.UPDATE_RESTAURANT_SUCCESS,
     result
@@ -55,7 +55,7 @@ export const getAllRestaurant = async (req: Request, res: Response, next: NextFu
 export const deleteRestaurant = async (req: Request, res: Response, next: NextFunction) => {
   const user = req.decoded_authorization as TokenPayload
   const user_id = user.user_id
-  const result = await restaurantService.deleteRestaurant(user_id.toString(), req.params.delivery_id)
+  const result = await restaurantService.deleteRestaurant(user_id.toString(), req.params.restaurant_id)
   res.json({
     message: RESTAURANT_MESSAGES.DELETE_RESTAURANT_SUCCESS,
     result

@@ -47,7 +47,7 @@ class RestaurantService {
     }
   }
 
-  async updateRestaurant(user_id: string, delivery_id: string, updateBody: UpsertRestaurantReqBody) {
+  async updateRestaurant(user_id: string, restaurant_id: string, updateBody: UpsertRestaurantReqBody) {
     // updateBody = removeNull(updateBody) as UpsertRestaurantReqBody
     const user = await databaseService.users.findOne({
       _id: new ObjectId(user_id)
@@ -58,12 +58,9 @@ class RestaurantService {
         status: 404
       })
     }
-    const deliveryDefault = await databaseService.restaurants.findOne({
-      user_id: new ObjectId(user_id),
-      is_default: true
-    })
+    
     const restaurant = await databaseService.restaurants.updateOne(
-      { _id: new ObjectId(delivery_id), user_id: new ObjectId(user_id) },
+      { _id: new ObjectId(restaurant_id), user_id: new ObjectId(user_id) },
       { $set: updateBody }
     )
     return restaurant
@@ -92,7 +89,7 @@ class RestaurantService {
     return restaurants
   }
 
-  async deleteRestaurant(user_id: string, delivery_id: string) {
+  async deleteRestaurant(user_id: string, restaurant_id: string) {
     const user = await databaseService.users.findOne({
       _id: new ObjectId(user_id)
     })
@@ -103,7 +100,7 @@ class RestaurantService {
       })
     }
     const restaurant = await databaseService.restaurants.deleteOne({
-      _id: new ObjectId(delivery_id),
+      _id: new ObjectId(restaurant_id),
       user_id: new ObjectId(user_id)
     })
     return restaurant

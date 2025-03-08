@@ -40,9 +40,9 @@ restaurantRouter.get('/all', wrapRequestHandler(getAllRestaurant))
 restaurantRouter.get('/', wrapRequestHandler(getAllRestaurantByUserId))
 /**
  * Description: Delete a restaurant
- * Path: /:delivery_id
+ * Path: /:restaurant_id
  * method: DELETE
  */
-restaurantRouter.delete('/:delivery_id', isRestaurantExist, wrapRequestHandler(deleteRestaurant))
+restaurantRouter.delete('/:restaurant_id', isRestaurantExist, wrapRequestHandler(deleteRestaurant))
 
 export default restaurantRouter
