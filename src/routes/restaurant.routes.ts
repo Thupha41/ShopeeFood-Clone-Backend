@@ -25,12 +25,7 @@ restaurantRouter.post('/', restaurantValidator, wrapRequestHandler(createRestaur
  * method: PUT
  * Body: {name: string, phone: string, address: string, email: string, rating: Double, image: string, isActive: boolean}
  */
-restaurantRouter.put(
-  '/:restaurant_id',
-  isRestaurantExist,
-  restaurantValidator,
-  wrapRequestHandler(updateRestaurant)
-)
+restaurantRouter.put('/:restaurant_id', isRestaurantExist, restaurantValidator, wrapRequestHandler(updateRestaurant))
 /**
  * Description: Get all restaurant
  * Path: /
