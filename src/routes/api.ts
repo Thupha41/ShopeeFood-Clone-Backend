@@ -1,4 +1,5 @@
 import { Application, Router } from 'express'
+import restaurantRouter from './restaurant.routes'
 import usersRouter from './users.routes'
 import mediasRouter from './media.routes'
 import tweetsRouter from './tweets.routes'
@@ -10,6 +11,8 @@ import staticRouter from './static.routes'
 const router = Router()
 
 const initApiRoute = (app: Application) => {
+  //restaurant
+  router.use('/restaurant', restaurantRouter)
   //users
   router.use('/users', usersRouter)
   //medias

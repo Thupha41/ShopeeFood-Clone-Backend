@@ -1,5 +1,6 @@
 import { Db, MongoClient, Collection } from 'mongodb'
 import { envConfig } from '../constants/config'
+import Restaurant from '~/models/schemas/Restaurant.schema'
 import User from '../models/schemas/User.schema'
 import RefreshToken from '~/models/schemas/RefreshToken.schema'
 import Follower from '~/models/schemas/Follower.schema'
@@ -23,6 +24,9 @@ class DatabaseService {
     }
   }
 
+  get restaurants(): Collection<Restaurant> {
+    return this.db.collection(envConfig.dbRestaurantsCollection)
+  }
   get users(): Collection<User> {
     return this.db.collection(envConfig.dbUsersCollection)
   }
