@@ -51,6 +51,7 @@ export const getAllRestaurant = async (req: Request, res: Response, next: NextFu
     message: RESTAURANT_MESSAGES.GET_ALL_RESTAURANT_SUCCESS,
     result
   })
+  return
 }
 export const deleteRestaurant = async (req: Request, res: Response, next: NextFunction) => {
   const user = req.decoded_authorization as TokenPayload

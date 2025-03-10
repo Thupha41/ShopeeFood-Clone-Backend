@@ -58,9 +58,9 @@ class RestaurantService {
         status: 404
       })
     }
-    
+
     const restaurant = await databaseService.restaurants.updateOne(
-      { _id: new ObjectId(restaurant_id), user_id: new ObjectId(user_id) },
+      { _id: new ObjectId(restaurant_id) },
       { $set: updateBody }
     )
     return restaurant
@@ -101,7 +101,6 @@ class RestaurantService {
     }
     const restaurant = await databaseService.restaurants.deleteOne({
       _id: new ObjectId(restaurant_id),
-      user_id: new ObjectId(user_id)
     })
     return restaurant
   }
