@@ -91,6 +91,7 @@ export const LIKE_MESSAGES = {
   UNLIKE_SUCCESSFULLY: 'Unlike successfully'
 }
 
+
 export const RESTAURANT_MESSAGES = {
   CREATE_RESTAURANT_SUCCESS: 'Create restaurant successfully',
   UPDATE_RESTAURANT_SUCCESS: 'Update restaurant successfully',
@@ -109,4 +110,24 @@ export const RESTAURANT_MESSAGES = {
   RATING_MUST_BE_A_FLOAT: 'Rating must be a float (or double)',
   IMAGE_MUST_BE_A_STRING: 'Image must be a string',
   ISACTIVE_MUST_BE_A_BOOLEAN: 'isActive must be a boolean'
+} as const
+export const DELIVERY_INFO_MESSAGES = {
+  PROVINCE_CITY_IS_REQUIRED: 'Province city is required',
+  PROVINCE_CITY_MUST_BE_A_STRING: 'Province city must be a string',
+  DISTRICT_IS_REQUIRED: 'District is required',
+  DISTRICT_MUST_BE_A_STRING: 'District must be a string',
+  WARD_IS_REQUIRED: 'Ward is required',
+  WARD_MUST_BE_A_STRING: 'Ward must be a string',
+  STREET_IS_REQUIRED: 'Street is required',
+  STREET_MUST_BE_A_STRING: 'Street must be a string',
+  IS_DEFAULT_MUST_BE_A_BOOLEAN: 'Is default must be a boolean',
+  DELIVERY_INFO_IS_REQUIRED: 'Delivery info is required',
+  DELIVERY_INFO_NOT_FOUND: 'Delivery info not found',
+  INVALID_DELIVERY_INFO_ID: 'Invalid delivery info id',
+  USER_ALREADY_HAVE_DEFAULT_DELIVERY_INFO: 'User already have default delivery info',
+  CREATE_DELIVERY_INFO_SUCCESS: 'Create delivery info successfully',
+  UPDATE_DELIVERY_INFO_SUCCESS: 'Update delivery info successfully',
+  GET_ALL_DELIVERY_INFO_SUCCESS: 'Get all delivery info successfully',
+  DELETE_DELIVERY_INFO_SUCCESS: 'Delete delivery info successfully'
+
 }

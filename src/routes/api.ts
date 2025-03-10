@@ -8,6 +8,7 @@ import likesRouter from './likes.routes'
 import searchRouter from './search.routes'
 import conversationsRouter from './conversations.routes'
 import staticRouter from './static.routes'
+import deliveryInfoRouter from './deliveryInfo.routes'
 const router = Router()
 
 const initApiRoute = (app: Application) => {
@@ -29,6 +30,8 @@ const initApiRoute = (app: Application) => {
   router.use('/conversations', conversationsRouter)
   //static
   router.use('/static', staticRouter)
+  //delivery info
+  router.use('/delivery-info', deliveryInfoRouter)
   //api/v1 router
   return app.use('/api/v1', router)
 }
