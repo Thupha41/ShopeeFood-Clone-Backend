@@ -131,3 +131,16 @@ export const DELIVERY_INFO_MESSAGES = {
   DELETE_DELIVERY_INFO_SUCCESS: 'Delete delivery info successfully'
 
 }
+
+export const MENUS_MESSAGES = {
+  CREATE_MENU_SUCCESS: 'Create menu successfully',
+  UPDATE_MENU_SUCCESS: 'Update menu successfully',
+  GET_ALL_MENU_SUCCESS: 'Get all menu successfully',
+  DELETE_MENU_SUCCESS: 'Delete menu successfully',
+  MENU_NOT_FOUND: 'Menu not found',
+  INVALID_MENU_ID: 'Invalid menu id',
+  RESTAURANT_ID_IS_REQUIRED: 'Restaurant id is required',
+  INVALID_RESTAURANT_ID: 'Invalid restaurant id',
+  TITLE_IS_REQUIRED: 'Title is required',
+  TITLE_MUST_BE_A_STRING: 'Title must be a string'
+} as const
