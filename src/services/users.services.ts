@@ -205,9 +205,9 @@ class UsersService {
 
     // Send mail with defined transport object
     const info = await transporter.sendMail({
-      from: `"Verify email ShopLaz" <${envConfig.googleAppEmail}>`,
+      from: `"Verify email Foody" <${envConfig.googleAppEmail}>`,
       to: `${payload.email}`,
-      subject: 'Verify email ShopLaz account',
+      subject: 'Verify email Foody account',
       html: htmlToSend
     })
     console.log('>>> end sending email')
