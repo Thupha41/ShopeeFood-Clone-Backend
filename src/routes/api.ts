@@ -10,6 +10,7 @@ import conversationsRouter from './conversations.routes'
 import staticRouter from './static.routes'
 import deliveryInfoRouter from './deliveryInfo.routes'
 import menuRouter from './menus.routes'
+import menuItemRouter from './menuItems.routes'
 const router = Router()
 
 const initApiRoute = (app: Application) => {
@@ -35,6 +36,8 @@ const initApiRoute = (app: Application) => {
   router.use('/delivery-info', deliveryInfoRouter)
   //menus
   router.use('/menus', menuRouter)
+  //menu items
+  router.use('/menu-items', menuItemRouter)
   //api/v1 router
   return app.use('/api/v1', router)
 }

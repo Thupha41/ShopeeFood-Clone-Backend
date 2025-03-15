@@ -144,3 +144,20 @@ export const MENUS_MESSAGES = {
   TITLE_IS_REQUIRED: 'Title is required',
   TITLE_MUST_BE_A_STRING: 'Title must be a string'
 } as const
+
+export const MENU_ITEM_MESSAGES = {
+  CREATE_MENU_ITEM_SUCCESS: 'Create menu item successfully',
+  UPDATE_MENU_ITEM_SUCCESS: 'Update menu item successfully',
+  GET_ALL_MENU_ITEM_SUCCESS: 'Get all menu item successfully',
+  DELETE_MENU_ITEM_SUCCESS: 'Delete menu item successfully',
+  INVALID_MENU_ITEM_ID: 'Invalid menu item ID',
+  MENU_ITEM_NOT_FOUND: 'Menu item not found',
+  MENU_ID_IS_REQUIRED: 'Menu ID is required',
+  INVALID_MENU_ID: 'Invalid menu ID',
+  TITLE_IS_REQUIRED: 'Title is required',
+  TITLE_MUST_BE_A_STRING: 'Title must be a string',
+  BASE_PRICE_IS_REQUIRED: 'Base price is required',
+  BASE_PRICE_MUST_BE_A_NUMBER: 'Base price must be a number',
+  IMAGE_MUST_BE_A_STRING: 'Image must be a string (URL)',
+  OPTIONS_MUST_BE_AN_ARRAY: 'Options must be an array'
+}

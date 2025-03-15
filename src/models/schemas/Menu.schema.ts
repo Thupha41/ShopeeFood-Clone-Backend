@@ -2,14 +2,14 @@ import { ObjectId } from 'mongodb'
 
 interface IMenuType {
   _id?: ObjectId
-  restaurant_id: string
+  restaurant_id: ObjectId
   title: string
   created_at?: Date
   updated_at?: Date
 }
 export default class Menu {
   _id?: ObjectId
-  restaurant_id: string
+  restaurant_id: ObjectId
   title: string
   created_at: Date
   updated_at: Date

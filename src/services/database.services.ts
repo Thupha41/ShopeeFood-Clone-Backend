@@ -6,6 +6,7 @@ import RefreshToken from '~/models/schemas/RefreshToken.schema'
 import Follower from '~/models/schemas/Follower.schema'
 import DeliveryInfo from '~/models/schemas/DeliveryInfo.schema'
 import Menu from '~/models/schemas/Menu.schema'
+import MenuItem from '~/models/schemas/MenuItem.schema'
 const uri = `mongodb+srv://${envConfig.dbUsername}:${envConfig.dbPassword}@twitter-cluster.hzc1q.mongodb.net/?retryWrites=true&w=majority&appName=Twitter-Cluster`
 
 class DatabaseService {
@@ -43,6 +44,9 @@ class DatabaseService {
   }
   get menus(): Collection<Menu> {
     return this.db.collection(envConfig.dbMenusCollection)
+  }
+  get menuItems(): Collection<MenuItem> {
+    return this.db.collection(envConfig.dbMenuItemsCollection)
   }
 }
 const databaseService = new DatabaseService()
