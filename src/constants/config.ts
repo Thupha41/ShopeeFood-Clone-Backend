@@ -23,6 +23,7 @@ export const envConfig = {
   dbFollowersCollection: process.env.DB_FOLLOWERS_COLLECTION as string,
   dbDeliveryInfosCollection: process.env.DB_DELIVERY_INFOS_COLLECTION as string,
   dbMenusCollection: process.env.DB_MENUS_COLLECTION as string,
+  dbMenuItemsCollection: process.env.DB_MENU_ITEMS_COLLECTION as string,
   jwtSecretAccessToken: process.env.JWT_SECRET_ACCESS_TOKEN as string,
   jwtSecretRefreshToken: process.env.JWT_SECRET_REFRESH_TOKEN as string,
   jwtSecretEmailVerifyToken: process.env.EMAIL_SECRET_TOKEN as string,

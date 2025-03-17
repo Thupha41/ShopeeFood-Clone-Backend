@@ -29,7 +29,9 @@ class MenuService {
     }
     const menu = await databaseService.menus.insertOne({
       restaurant_id: new ObjectId(restaurant_id),
-      title
+      title,
+      created_at: new Date(),
+      updated_at: new Date()
     })
     return {
       _id: menu.insertedId,
@@ -49,7 +51,26 @@ class MenuService {
         status: 404
       })
     }
-    const menu = await databaseService.menus.updateOne({ _id: new ObjectId(menu_id) }, { $set: updateBody })
+    if (updateBody.restaurant_id) {
+      const restaurant = await databaseService.restaurants.findOne({
+        _id: new ObjectId(updateBody.restaurant_id)
+      })
+      if (!restaurant) {
+        throw new ErrorWithStatus({
+          message: RESTAURANT_MESSAGES.RESTAURANT_NOT_FOUND,
+          status: 404
+        })
+      }
+    }
+    const menu = await databaseService.menus.updateOne(
+      { _id: new ObjectId(menu_id) },
+      {
+        $set: {
+          restaurant_id: new ObjectId(updateBody.restaurant_id),
+          title: updateBody.title
+        }
+      }
+    )
     return menu
   }
 

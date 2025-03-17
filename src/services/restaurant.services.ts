@@ -1,5 +1,5 @@
 import Restaurant from '~/models/schemas/Restaurant.schema'
-// import { removeNull } from '~/utils'
+import { removeNull } from '~/utils'
 import databaseService from './database.services'
 import { UpsertRestaurantReqBody } from '~/models/requests/restaurant.requests'
 import { ObjectId } from 'mongodb'
@@ -48,7 +48,7 @@ class RestaurantService {
   }
 
   async updateRestaurant(user_id: string, restaurant_id: string, updateBody: UpsertRestaurantReqBody) {
-    // updateBody = removeNull(updateBody) as UpsertRestaurantReqBody
+    updateBody = removeNull(updateBody) as UpsertRestaurantReqBody
     const user = await databaseService.users.findOne({
       _id: new ObjectId(user_id)
     })
@@ -100,7 +100,7 @@ class RestaurantService {
       })
     }
     const restaurant = await databaseService.restaurants.deleteOne({
-      _id: new ObjectId(restaurant_id),
+      _id: new ObjectId(restaurant_id)
     })
     return restaurant
   }
