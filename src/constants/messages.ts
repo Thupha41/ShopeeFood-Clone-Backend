@@ -91,7 +91,6 @@ export const LIKE_MESSAGES = {
   UNLIKE_SUCCESSFULLY: 'Unlike successfully'
 }
 
-
 export const RESTAURANT_MESSAGES = {
   CREATE_RESTAURANT_SUCCESS: 'Create restaurant successfully',
   UPDATE_RESTAURANT_SUCCESS: 'Update restaurant successfully',
@@ -129,7 +128,6 @@ export const DELIVERY_INFO_MESSAGES = {
   UPDATE_DELIVERY_INFO_SUCCESS: 'Update delivery info successfully',
   GET_ALL_DELIVERY_INFO_SUCCESS: 'Get all delivery info successfully',
   DELETE_DELIVERY_INFO_SUCCESS: 'Delete delivery info successfully'
-
 }
 
 export const MENUS_MESSAGES = {

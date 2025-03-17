@@ -1,16 +1,13 @@
-import { UpsertMenuItemReqBody } from "~/models/requests/menuItems.request"
-import databaseService from "./database.services"
-import { ObjectId } from "mongodb"
-import { USERS_MESSAGES, MENUS_MESSAGES } from "~/constants/messages"
-import { ErrorWithStatus } from "~/models/Errors"
-import { removeNull } from "~/utils"
-import { menuItemRepository } from "~/models/repositories/menuItem.repo"
+import { UpsertMenuItemReqBody } from '~/models/requests/menuItems.request'
+import databaseService from './database.services'
+import { ObjectId } from 'mongodb'
+import { USERS_MESSAGES, MENUS_MESSAGES } from '~/constants/messages'
+import { ErrorWithStatus } from '~/models/Errors'
+import { removeNull } from '~/utils'
+import { menuItemRepository } from '~/models/repositories/menuItem.repo'
 
 class MenuItemService {
-  async createMenuItem(
-    user_id: string, 
-    { menu_id, title, basePrice, image, options }: UpsertMenuItemReqBody
-  ) {
+  async createMenuItem(user_id: string, { menu_id, title, basePrice, image, options }: UpsertMenuItemReqBody) {
     const user = await databaseService.users.findOne({
       _id: new ObjectId(user_id)
     })
@@ -36,9 +33,9 @@ class MenuItemService {
       title,
       basePrice,
       image,
-      options,
+      // options,
       created_at: new Date(),
-      updated_at: new Date(),
+      updated_at: new Date()
     })
     return {
       _id: menuItem.insertedId,
@@ -61,7 +58,13 @@ class MenuItemService {
         status: 404
       })
     }
-    const menuItem = await databaseService.menuItems.updateOne({ _id: new ObjectId(menu_item_id) }, { updateBody })
+    const updateData = {
+      $set: {
+        ...updateBody,
+        updated_at: new Date()
+      }
+    }
+    const menuItem = await databaseService.menuItems.updateOne({ _id: new ObjectId(menu_item_id) }, { updateData })
     return menuItem
   }
 
@@ -81,7 +84,7 @@ class MenuItemService {
       })
     }
     const menuItem = await databaseService.menuItems.deleteOne({
-      _id: new ObjectId(menu_item_id),
+      _id: new ObjectId(menu_item_id)
     })
     return menuItem
   }

@@ -100,7 +100,7 @@ class RestaurantService {
       })
     }
     const restaurant = await databaseService.restaurants.deleteOne({
-      _id: new ObjectId(restaurant_id),
+      _id: new ObjectId(restaurant_id)
     })
     return restaurant
   }

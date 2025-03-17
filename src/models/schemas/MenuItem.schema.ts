@@ -1,24 +1,24 @@
-import { ObjectId } from "mongodb";
-import { IOptions } from "../requests/menuItems.request";
+import { ObjectId } from 'mongodb'
+import { IOptions } from '../requests/menuItems.request'
 
 interface MenuItemType {
   _id?: ObjectId
-  menu_id: ObjectId
-  title: string
-  basePrice: number
-  image: string
-  options: Array<IOptions>
+  menu_id?: ObjectId
+  title?: string
+  basePrice?: number
+  image?: string
+  options?: Array<IOptions>
   created_at?: Date
   updated_at?: Date
 }
 
 export default class MenuItem {
   _id?: ObjectId
-  menu_id: ObjectId 
-  title: string
-  basePrice: number
-  image: string
-  options: Array<IOptions>
+  menu_id?: ObjectId
+  title?: string
+  basePrice?: number
+  image?: string
+  options?: Array<IOptions>
   created_at?: Date
   updated_at?: Date
   constructor({ _id, menu_id, title, basePrice, image, options, created_at, updated_at }: MenuItemType) {
